@@ -1,0 +1,178 @@
+fileFormatVersion: 2
+guid: 2635d60f17a56494fa4a5c38dc424d30
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Icono_Basura_Correcta
+    100002: Icono_Basura_Incorrecta
+    100004: Icono_Cazador
+    100006: Icono_Moneda
+    100008: Icono_Murcielago
+    100010: Icono_Patos
+    100012: Icono_Trampas
+    100014: Iconos_Oso
+    100016: Material_UI
+    100018: //RootNode
+    100020: UI_Boton
+    100022: UI_Boton 1
+    100024: UI_Iconos
+    100026: UI_Marco
+    100028: UI_Marco_Grande
+    100030: UI_Marco_Largo
+    100032: UI_Marco_Mediano
+    100034: UI_Poste
+    400000: Icono_Basura_Correcta
+    400002: Icono_Basura_Incorrecta
+    400004: Icono_Cazador
+    400006: Icono_Moneda
+    400008: Icono_Murcielago
+    400010: Icono_Patos
+    400012: Icono_Trampas
+    400014: Iconos_Oso
+    400016: Material_UI
+    400018: //RootNode
+    400020: UI_Boton
+    400022: UI_Boton 1
+    400024: UI_Iconos
+    400026: UI_Marco
+    400028: UI_Marco_Grande
+    400030: UI_Marco_Largo
+    400032: UI_Marco_Mediano
+    400034: UI_Poste
+    2100000: MAT_MarcosUI
+    2100002: MAT_BotonUI
+    2300000: Icono_Basura_Correcta
+    2300002: Icono_Basura_Incorrecta
+    2300004: Icono_Cazador
+    2300006: Icono_Moneda
+    2300008: Icono_Murcielago
+    2300010: Icono_Patos
+    2300012: Icono_Trampas
+    2300014: Iconos_Oso
+    2300016: UI_Boton 1
+    2300018: UI_Marco
+    2300020: UI_Marco_Grande
+    2300022: UI_Marco_Largo
+    2300024: UI_Marco_Mediano
+    2300026: UI_Poste
+    3300000: Icono_Basura_Correcta
+    3300002: Icono_Basura_Incorrecta
+    3300004: Icono_Cazador
+    3300006: Icono_Moneda
+    3300008: Icono_Murcielago
+    3300010: Icono_Patos
+    3300012: Icono_Trampas
+    3300014: Iconos_Oso
+    3300016: UI_Boton 1
+    3300018: UI_Marco
+    3300020: UI_Marco_Grande
+    3300022: UI_Marco_Largo
+    3300024: UI_Marco_Mediano
+    3300026: UI_Poste
+    4300000: UI_Poste
+    4300002: UI_Marco
+    4300004: UI_Marco_Largo
+    4300006: UI_Marco_Mediano
+    4300008: UI_Marco_Grande
+    4300010: Icono_Cazador
+    4300012: Icono_Basura_Correcta
+    4300014: Icono_Trampas
+    4300016: Icono_Basura_Incorrecta
+    4300018: Iconos_Oso
+    4300020: Icono_Moneda
+    4300022: Icono_Patos
+    4300024: Icono_Murcielago
+    4300026: UI_Boton
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_BotonUI
+    second: {fileID: 2100000, guid: 273d6a3c0442dbc45ba07f04dbde48b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_MarcosUI
+    second: {fileID: 2100000, guid: 29dc34f6b7b5ed4448bd914c65276932, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

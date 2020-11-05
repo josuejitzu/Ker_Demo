@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: 7054d8be4677abc42a308e46575660f4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Tiquet
+    100002: Titulo_CAMINOS_DE_LA_MINA
+    100004: Titulo_CAMPAMENTO_MAPACHE
+    100006: Titulo_LAGO_LIRIO
+    100008: TITULOS
+    100010: Titulos_BOQUE_BELLOTA
+    100012: //RootNode
+    400000: Tiquet
+    400002: Titulo_CAMINOS_DE_LA_MINA
+    400004: Titulo_CAMPAMENTO_MAPACHE
+    400006: Titulo_LAGO_LIRIO
+    400008: TITULOS
+    400010: Titulos_BOQUE_BELLOTA
+    400012: //RootNode
+    2100000: MAT_Titulos_Tiquets
+    2100002: MAT_Tiquet
+    2300000: Tiquet
+    2300002: Titulo_CAMINOS_DE_LA_MINA
+    2300004: Titulo_CAMPAMENTO_MAPACHE
+    2300006: Titulo_LAGO_LIRIO
+    2300008: Titulos_BOQUE_BELLOTA
+    3300000: Tiquet
+    3300002: Titulo_CAMINOS_DE_LA_MINA
+    3300004: Titulo_CAMPAMENTO_MAPACHE
+    3300006: Titulo_LAGO_LIRIO
+    3300008: Titulos_BOQUE_BELLOTA
+    4300000: Titulo_LAGO_LIRIO
+    4300002: Titulo_CAMINOS_DE_LA_MINA
+    4300004: Titulos_BOQUE_BELLOTA
+    4300006: Titulo_CAMPAMENTO_MAPACHE
+    4300008: Tiquet
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Tiquet
+    second: {fileID: 2100000, guid: ca53266ffc9e95f4b996ba0ee7fe839c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Titulos_Tiquets
+    second: {fileID: 2100000, guid: 0954d647282bd83438309abdf225c5e5, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,246 @@
+fileFormatVersion: 2
+guid: 8d18cfca00473774a9ae7a5c8cd6c956
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Asientos
+    100002: Piedra_00
+    100004: Piedra_01
+    100006: Piedra_010
+    100008: Piedra_02
+    100010: Piedra_03
+    100012: Piedra_04
+    100014: Piedra_05
+    100016: Piedra_06
+    100018: Piedra_07
+    100020: Piedra_08
+    100022: Piedra_09
+    100024: Piedra_Redonda_00
+    100026: Piedra_Redonda_01
+    100028: Piedra_Redonda_02
+    100030: Piedras
+    100032: //RootNode
+    100034: Plataforma_Central
+    100036: Plataformas
+    100038: Rama_00
+    100040: Rama_01
+    100042: Rama_02
+    100044: Rama_03
+    100046: Ramas
+    100048: Tablas
+    100050: Tablas_00
+    100052: Tablas_01
+    100054: Tablas_02
+    100056: Tablas_03
+    100058: TablasExternas
+    100060: Troncos
+    100062: Troncos_00
+    100064: Troncos_01
+    100066: Troncos_02
+    400000: Asientos
+    400002: Piedra_00
+    400004: Piedra_01
+    400006: Piedra_010
+    400008: Piedra_02
+    400010: Piedra_03
+    400012: Piedra_04
+    400014: Piedra_05
+    400016: Piedra_06
+    400018: Piedra_07
+    400020: Piedra_08
+    400022: Piedra_09
+    400024: Piedra_Redonda_00
+    400026: Piedra_Redonda_01
+    400028: Piedra_Redonda_02
+    400030: Piedras
+    400032: //RootNode
+    400034: Plataforma_Central
+    400036: Plataformas
+    400038: Rama_00
+    400040: Rama_01
+    400042: Rama_02
+    400044: Rama_03
+    400046: Ramas
+    400048: Tablas
+    400050: Tablas_00
+    400052: Tablas_01
+    400054: Tablas_02
+    400056: Tablas_03
+    400058: TablasExternas
+    400060: Troncos
+    400062: Troncos_00
+    400064: Troncos_01
+    400066: Troncos_02
+    2100000: TEXEL_DEN
+    2300000: Asientos
+    2300002: Piedra_00
+    2300004: Piedra_01
+    2300006: Piedra_010
+    2300008: Piedra_02
+    2300010: Piedra_03
+    2300012: Piedra_04
+    2300014: Piedra_05
+    2300016: Piedra_06
+    2300018: Piedra_07
+    2300020: Piedra_08
+    2300022: Piedra_09
+    2300024: Piedra_Redonda_00
+    2300026: Piedra_Redonda_01
+    2300028: Piedra_Redonda_02
+    2300030: Plataforma_Central
+    2300032: Rama_00
+    2300034: Rama_01
+    2300036: Rama_02
+    2300038: Rama_03
+    2300040: Tablas_00
+    2300042: Tablas_01
+    2300044: Tablas_02
+    2300046: Tablas_03
+    2300048: TablasExternas
+    2300050: Troncos_00
+    2300052: Troncos_01
+    2300054: Troncos_02
+    3300000: Asientos
+    3300002: Piedra_00
+    3300004: Piedra_01
+    3300006: Piedra_010
+    3300008: Piedra_02
+    3300010: Piedra_03
+    3300012: Piedra_04
+    3300014: Piedra_05
+    3300016: Piedra_06
+    3300018: Piedra_07
+    3300020: Piedra_08
+    3300022: Piedra_09
+    3300024: Piedra_Redonda_00
+    3300026: Piedra_Redonda_01
+    3300028: Piedra_Redonda_02
+    3300030: Plataforma_Central
+    3300032: Rama_00
+    3300034: Rama_01
+    3300036: Rama_02
+    3300038: Rama_03
+    3300040: Tablas_00
+    3300042: Tablas_01
+    3300044: Tablas_02
+    3300046: Tablas_03
+    3300048: TablasExternas
+    3300050: Troncos_00
+    3300052: Troncos_01
+    3300054: Troncos_02
+    4300000: Piedra_01
+    4300002: Piedra_02
+    4300004: Piedra_03
+    4300006: Piedra_04
+    4300008: Piedra_05
+    4300010: Piedra_06
+    4300012: Piedra_07
+    4300014: Piedra_08
+    4300016: Piedra_09
+    4300018: Piedra_00
+    4300020: Piedra_010
+    4300022: Piedra_Redonda_00
+    4300024: Piedra_Redonda_01
+    4300026: Piedra_Redonda_02
+    4300028: Tablas_00
+    4300030: Tablas_01
+    4300032: Tablas_02
+    4300034: Tablas_03
+    4300036: Rama_00
+    4300038: Rama_01
+    4300040: Rama_02
+    4300042: Rama_03
+    4300044: Troncos_00
+    4300046: Troncos_01
+    4300048: Troncos_02
+    4300050: TablasExternas
+    4300052: Plataforma_Central
+    4300054: Asientos
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TEXEL_DEN
+    second: {fileID: 2100000, guid: 31931ad7367c175478f74cb1d1b249ea, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

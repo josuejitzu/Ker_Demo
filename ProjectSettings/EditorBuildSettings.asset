@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Escenas/Lobby_01.unity
+    guid: c442688e4259f734b9951b65b93765e3
+  - enabled: 1
+    path: Assets/_Escenas/jungla_01.unity
+    guid: 25877ed6b6adf224cbb1c20fa21cb232
+  - enabled: 1
+    path: Assets/_Escenas/fondoBikini_01.unity
+    guid: e2bade1951228df4baa5a4c677800a67
+  - enabled: 1
+    path: Assets/_Escenas/luna_01.unity
+    guid: d7f6a2dcbd6f9b54588c74b3f0be8dba
+  m_configObjects: {}

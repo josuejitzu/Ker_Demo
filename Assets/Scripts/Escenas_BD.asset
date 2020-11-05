@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b21009106b7894a9fe5d468ecd48f4, type: 3}
+  m_Name: Escenas_BD
+  m_EditorClassIdentifier: 
+  escenas:
+  - nombreID: luna
+    escena: luna_01
+    boton: {fileID: 0}
+    titulo: Lunas
+    descripcion: 
+    thumbnail: {fileID: 21300000, guid: e522b8915a01a7148b43fc4bca8142e3, type: 3}
+  - nombreID: jungla
+    escena: jungla_01
+    boton: {fileID: 0}
+    titulo: Jungla
+    descripcion: 
+    thumbnail: {fileID: 21300000, guid: cb1da68fcfccf8b4dafe398001b93741, type: 3}
+  - nombreID: lobby
+    escena: Lobby_01
+    boton: {fileID: 0}
+    titulo: Lobby
+    descripcion: 
+    thumbnail: {fileID: 0}
+  - nombreID: fondoOceano
+    escena: fondoBikini_01
+    boton: {fileID: 0}
+    titulo: Oceano
+    descripcion: 
+    thumbnail: {fileID: 21300000, guid: a8636aa209c7cff4da29521f466c6728, type: 3}
