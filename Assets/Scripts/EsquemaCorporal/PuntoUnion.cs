@@ -90,11 +90,7 @@ namespace EsquemaCorporal
                 //EsPiezaCorrecta = PiezaConectadaCorrecta.SinPieza;
                 this.GetComponent<SphereCollider>().enabled = true;
 
-                //Parece ya no ser necesario
-                //if (EstadoPieza == EstadoPieza.Unida)
-                //{
-                //    UnirPieza();
-                //}
+                
             }
 
 
@@ -108,6 +104,7 @@ namespace EsquemaCorporal
         /// <param name="_puntoUnionEncontrado"></param>
         void ChecarUnionPieza(PuntoUnion _puntoUnionEncontrado)
         {
+            
             //Esto lo comente por la logica de tomar
             //if (EstadoPieza == EstadoPieza.Unida && !debug)
             //    return;

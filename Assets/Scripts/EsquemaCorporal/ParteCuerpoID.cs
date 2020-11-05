@@ -13,6 +13,7 @@ namespace EsquemaCorporal
         ManoDerecha,
         ManoIzquierda,
         PieDerecho,
-        PieIzquierdo
+        PieIzquierdo,
+       
     }
 }

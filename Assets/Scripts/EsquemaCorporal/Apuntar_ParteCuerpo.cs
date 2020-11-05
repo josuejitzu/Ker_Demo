@@ -81,6 +81,7 @@ namespace EsquemaCorporal
             else
             {
                 cuerpoControl.EmpezarArmado();
+                panelInstrucciones.SetActive(false);
             }
         }
 

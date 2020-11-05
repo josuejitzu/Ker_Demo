@@ -18,17 +18,24 @@ namespace EsquemaCorporal
         [SerializeField] private TMP_Text cronometro_text;
         [SerializeField] private GameObject panelInstrucciones;
 
+        public GameObject meshOutlineCuerpo;
         [Space(10)]
         public List<ParteDeCuerpo> partesDelCuerpo = new List<ParteDeCuerpo>();
 
         private void Awake()
         {
             instancia = this;
+#if UNITY_EDITOR ///PARA mejorar rendimiento porque Debug.Log usa mucho proceso y lo ejecuta aun en las builds de cualquier plataforma
+            Debug.unityLogger.logEnabled = true;
+#else
+        Debug.unityLogger.logEnabled = false;
+#endif
+
         }
 
         void Start()
         {
-
+            panelInstrucciones.SetActive(false);
         }
         private void Update()
         {
@@ -42,7 +49,7 @@ namespace EsquemaCorporal
         public void EmpezarArmado()
         {
             ///mostrar letrero con instrucciones
-            panelInstrucciones.SetActive(true);
+           
             StartCoroutine(EmpezarArmado_Secuencia());
             
         }
@@ -50,16 +57,23 @@ namespace EsquemaCorporal
         IEnumerator EmpezarArmado_Secuencia()
         {
             ///Desaparecer mesh de señalizacion de partes
-            
+
             ///Activar partes de cuerpo para armar
-
-            yield return new WaitForSeconds(1.0f);
-
+            panelInstrucciones.SetActive(true);
+            meshOutlineCuerpo.SetActive(true);
+            yield return new WaitForSeconds(3.0f);
+            empezarCronometro = true;
             //Iniciar cronometro
 
             //Desaparecer letrero??
         }
 
+        /// <summary>
+        /// Es llamado externamente por alguna parte del cuerpo con PuntoUnion.cs para saber si es   colocada o no
+        /// 
+        /// </summary>
+        /// <param name="parteID"></param>
+        /// <param name="_esCorrecta"></param>
         public void ParteUnida(ParteCuerpoID parteID, PiezaConectadaCorrecta _esCorrecta)
         {
             foreach(ParteDeCuerpo parteCuerpo in partesDelCuerpo)
@@ -67,7 +81,9 @@ namespace EsquemaCorporal
                 if(parteCuerpo.parteDelCuerpo == parteID  )
                 {
                     parteCuerpo.conPiezaCorrecta = _esCorrecta;
-                    Debug.Log("Pieza colocada");
+                    parteCuerpo.tiempo = tiempoCronometro;
+
+                    Debug.Log($"Pieza {parteID } colocada, es {_esCorrecta}");
                     break;
                 }
             }
