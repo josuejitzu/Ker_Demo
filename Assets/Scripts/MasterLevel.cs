@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using UnityEngine.VR;
 using TMPro;
 using UnityEngine.XR;
+
 public class MasterLevel : MonoBehaviour
 {
     public GameObject panelMenu;
@@ -75,8 +76,8 @@ public class MasterLevel : MonoBehaviour
 
     private void Start()
     {
-        if(!menuEnInicio)
-             ToggleMenu();
+        //if(!menuEnInicio)
+        //     ToggleMenu();
 
         XRSettings.eyeTextureResolutionScale = eyeResolution;
 
@@ -134,6 +135,7 @@ public class MasterLevel : MonoBehaviour
             }
         }
     }
+    
     void CambiarEscena(string nombre)
     {
         Debug.Log($"Cambiando a escena: {nombre}");

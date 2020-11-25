@@ -6,7 +6,7 @@ using TMPro;
 namespace EsquemaCorporal
 
 {
-    public class Secuencia_ID_Cuerpo : MonoBehaviour
+    public class Secuencia_ID_Cuerpo : Seccion_EsquemaCorporal
     {
         // Start is called before the first frame update
         public GameObject panelPartesCuerpo;
@@ -23,15 +23,9 @@ namespace EsquemaCorporal
         public Apuntar_ParteCuerpo apuntarPartes;
         void Start()
         {
-            Empezar();
+           
         }
 
-        public void Empezar()
-        {
-            panelPartesCuerpo.SetActive(true);
-            Invoke("SiguienteParte", inicioDeSecuencia);
-
-        }
         public void SiguienteParte()
         {
             if (enParte < partesCuerpo.Length)
@@ -39,8 +33,8 @@ namespace EsquemaCorporal
                 StartCoroutine(SecuenciaOutline(partesCuerpo[enParte].tiempoApagado));
             }else
             {
-                panelPartesCuerpo.SetActive(false);
-                apuntarPartes.ComenzarSeñalamiento();
+                
+                SeccionTerminada();
             }
 
         }
@@ -57,6 +51,20 @@ namespace EsquemaCorporal
             enParte += 1;
             SiguienteParte();
 
+        }
+
+        public override void EmpezarSeccion()
+        {
+            panelPartesCuerpo.SetActive(true);
+            Invoke("SiguienteParte", inicioDeSecuencia);
+        }
+
+        public override void SeccionTerminada()
+        {
+            Debug.Log("Seccion Identificacion partes temrinada");
+            panelPartesCuerpo.SetActive(false);
+            this.GetComponent<ControlSecciones>().SeccionTerminada();
+            //apuntarPartes.EmpezarSeccion();
         }
     }
 

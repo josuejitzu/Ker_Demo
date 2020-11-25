@@ -38,15 +38,27 @@ namespace EsquemaCorporal
             {
                 if(Physics.Raycast(this.transform.position,this.transform.forward,out var hit,100.0f,layerPartesCuerpo))
                 {
-                    if (hit.transform.CompareTag("parteCuerpo"))
+                    
+                    if (hit.transform.CompareTag("parteCuerpo") && !parteSeñalando)
                     {
                         parteSeñalando = hit.transform.gameObject;
+                        parteSeñalando.GetComponent<CambioMaterial_Cuerpo>().ResaltarParte(true);
                     }
                     //ParteSeñalada?.Invoke(hit.transform.gameObject);
                     //puedeApuntar = false;
-                    
+
 
                 }
+                else
+                {
+                    if(parteSeñalando)
+                    {
+                        parteSeñalando.GetComponent<CambioMaterial_Cuerpo>().ResaltarParte(false);
+                        parteSeñalando = null;
+                    }
+                }
+
+
                 if (lineRenderer)
                 {
 
@@ -56,7 +68,15 @@ namespace EsquemaCorporal
                 }
 
                 Debug.DrawRay(this.transform.position, this.transform.forward * 3);
-                
+
+            }
+            else
+            {
+                if (parteSeñalando)
+                {
+                    parteSeñalando.GetComponent<CambioMaterial_Cuerpo>().ResaltarParte(false);
+                    parteSeñalando = null;
+                }
             }
 
            

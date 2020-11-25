@@ -7,15 +7,18 @@ using UnityEngine.Events;
 
 namespace EsquemaCorporal
 {
-    public class Apuntar_ParteCuerpo : MonoBehaviour
+    public class Apuntar_ParteCuerpo : Seccion_EsquemaCorporal
     {
 
         public GameObject panelInstrucciones;
         public TMP_Text mensajeSeñalar_text;
+        public GameObject puppetPartes;
 
+        [Space(10)]
         public List<ParteSeñalar_Settings> partesASeñalar = new List<ParteSeñalar_Settings>();
         // Start is called before the first frame update
         public int enParte = 0;
+        [SerializeField] private int señalarParteNum;
         [Space(10)]
         [Header("Controles")]
         public Apuntador_ParteDelCuerpo apuntadorL;
@@ -28,6 +31,10 @@ namespace EsquemaCorporal
 
         [Space(20)]
         public Cuerpo_Control cuerpoControl;
+
+
+        [SerializeField] private List<int> partesBuscadas = new List<int>();
+
         private void OnEnable()
         {
             Apuntador_ParteDelCuerpo.ParteSeñalada += ParteSeñalada;
@@ -42,7 +49,8 @@ namespace EsquemaCorporal
             panelInstrucciones.SetActive(false);
             Debug.Log(partesASeñalar.Count);
         }
-        // Update is called once per frame
+        
+
         void Update()
         {
             if(empezarCronometro)
@@ -54,17 +62,24 @@ namespace EsquemaCorporal
 
         public void CambiarNombreLetrero()
         {
-            mensajeSeñalar_text.text = partesASeñalar[enParte].mensaje;
+            mensajeSeñalar_text.text = partesASeñalar[señalarParteNum].mensaje;
         }
 
+
+        /// <summary>
+        /// Llamada por los controles con Apuntador_ParteDelCuerpo, pero por evento
+        /// </summary>
+        /// <param name="parte">gameobject que utilizamos para encontrar a donde procede</param>
         public  void ParteSeñalada(GameObject parte)
         {
             empezarCronometro = false;
 
-            partesASeñalar[enParte].tiempoTranscurrido = tiempoCronometro;
-            partesASeñalar[enParte].señalado = true;
-            if(partesASeñalar[enParte].parteCuerpo == parte)
-               partesASeñalar[enParte].esCorrecto = true;
+            partesASeñalar[señalarParteNum].tiempoTranscurrido = tiempoCronometro;
+            partesASeñalar[señalarParteNum].señalado = true;
+            if(partesASeñalar[señalarParteNum].parteCuerpo == parte)
+               partesASeñalar[señalarParteNum].esCorrecto = true;
+
+            partesBuscadas.Add(señalarParteNum);
 
             SiguienteParte();
 
@@ -75,13 +90,13 @@ namespace EsquemaCorporal
             if (enParte < partesASeñalar.Count-1)
             {
                 enParte += 1;
+                señalarParteNum = RandomParteASeñalar();
                 CambiarNombreLetrero();
                 empezarCronometro = true;
             }
             else
             {
-                cuerpoControl.EmpezarArmado();
-                panelInstrucciones.SetActive(false);
+                SeccionTerminada();   
             }
         }
 
@@ -93,7 +108,9 @@ namespace EsquemaCorporal
         IEnumerator ComenzarSeñalamiento_secuencia()
         {
             panelInstrucciones.SetActive(true);
+
             yield return new WaitForSeconds(3.0f);
+
             apuntadorL.ToggleApuntador(true);
             apuntadorR.ToggleApuntador(true);
             CambiarNombreLetrero();
@@ -102,6 +119,34 @@ namespace EsquemaCorporal
 
         }
 
+        public int RandomParteASeñalar()
+        {
+            
+            int r = UnityEngine.Random.Range(0,partesASeñalar.Count);
+
+            while(partesBuscadas.Contains(r))
+            {
+                r =  UnityEngine.Random.Range(0, partesASeñalar.Count);
+            }
+           // partesBuscadas.Add(r);
+            return r;
+        }
+
+        public override void  EmpezarSeccion()
+        {
+            ComenzarSeñalamiento();
+        }
+
+        public override void  SeccionTerminada()
+        {
+            panelInstrucciones.SetActive(false);
+            puppetPartes.SetActive(false);
+            apuntadorL.ToggleApuntador(false);
+            apuntadorR.ToggleApuntador(false);
+           // cuerpoControl.EmpezarSeccion();
+
+            this.GetComponent<ControlSecciones>().SeccionTerminada();
+        }
     }
 
     [System.Serializable]

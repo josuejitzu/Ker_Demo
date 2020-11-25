@@ -5,7 +5,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "09679b7075cbcd10f6b120579d7e3f3e7eb154e0"
+      "hash": "c11f43c30e38f68debc2d659d63fb80a75fe51eb"
     },
     "com.kelvip.quick-scene-switcher": {
       "version": "https://github.com/Kelvin-CD/Quick-Scene-Switcher.git#upm",
@@ -21,6 +21,25 @@
       "dependencies": {},
       "hash": "7047cf063c0dbc92b73a3d5e319ab25db877b01e"
     },
+    "com.unity.animation.rigging": {
+      "version": "0.2.7-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.1.1",
+        "com.unity.test-framework": "1.0.7"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.burst": {
+      "version": "1.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.1.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.2.16",
       "depth": 0,
@@ -35,6 +54,15 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.formats.usd": {
+      "version": "1.0.3-preview.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.timeline": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.ide.rider": {
       "version": "1.1.4",
       "depth": 0,
@@ -47,6 +75,13 @@
     "com.unity.ide.vscode": {
       "version": "1.2.1",
       "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.mathematics": {
+      "version": "1.1.0",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

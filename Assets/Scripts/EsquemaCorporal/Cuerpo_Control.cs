@@ -6,7 +6,7 @@ using TMPro;
 namespace EsquemaCorporal
 {
     
-    public class Cuerpo_Control : MonoBehaviour
+    public class Cuerpo_Control : Seccion_EsquemaCorporal
     {
         public static Cuerpo_Control instancia;
 
@@ -18,9 +18,16 @@ namespace EsquemaCorporal
         [SerializeField] private TMP_Text cronometro_text;
         [SerializeField] private GameObject panelInstrucciones;
 
+        [Space(10)]
         public GameObject meshOutlineCuerpo;
+        public GameObject parteParaArmar;
+        
+        [SerializeField] private bool inicioArmado;
+        [SerializeField] private bool terminoArmado;
+
         [Space(10)]
         public List<ParteDeCuerpo> partesDelCuerpo = new List<ParteDeCuerpo>();
+
 
         private void Awake()
         {
@@ -36,14 +43,11 @@ namespace EsquemaCorporal
         void Start()
         {
             panelInstrucciones.SetActive(false);
+            parteParaArmar.SetActive(false);
         }
         private void Update()
         {
-            if (empezarCronometro)
-            {
-                tiempoCronometro += Time.deltaTime;
-                cronometro_text.text = $" {Mathf.Floor(tiempoCronometro / 60).ToString("00")}:{(tiempoCronometro % 60.0f).ToString("00.0")}";
-            }
+           
         }
 
         public void EmpezarArmado()
@@ -61,8 +65,11 @@ namespace EsquemaCorporal
             ///Activar partes de cuerpo para armar
             panelInstrucciones.SetActive(true);
             meshOutlineCuerpo.SetActive(true);
+            parteParaArmar.SetActive(true);
             yield return new WaitForSeconds(3.0f);
+
             empezarCronometro = true;
+            inicioArmado = true;
             //Iniciar cronometro
 
             //Desaparecer letrero??
@@ -76,6 +83,9 @@ namespace EsquemaCorporal
         /// <param name="_esCorrecta"></param>
         public void ParteUnida(ParteCuerpoID parteID, PiezaConectadaCorrecta _esCorrecta)
         {
+            if (terminoArmado)
+                return;
+
             foreach(ParteDeCuerpo parteCuerpo in partesDelCuerpo)
             {
                 if(parteCuerpo.parteDelCuerpo == parteID  )
@@ -84,11 +94,50 @@ namespace EsquemaCorporal
                     parteCuerpo.tiempo = tiempoCronometro;
 
                     Debug.Log($"Pieza {parteID } colocada, es {_esCorrecta}");
+                    RevizarEstadoPiezas();
                     break;
                 }
             }
         }
 
+        void RevizarEstadoPiezas()
+        {
+            if (!inicioArmado)
+                return;
+
+            int buenas = 0;
+
+            foreach(ParteDeCuerpo parteCuerpo in partesDelCuerpo)
+            {
+                if(parteCuerpo.conPiezaCorrecta == PiezaConectadaCorrecta.Correcta)
+                {
+                    buenas++;
+                }
+                else
+                {
+                    if (buenas > 0)
+                        buenas--;
+                }
+
+            }
+
+            if(buenas == partesDelCuerpo.Count)
+            {
+                terminoArmado = true;
+                Debug.Log("Todas las partes del cuerpo colocadas correctamentes");
+                SeccionTerminada();
+            }
+        }
+
+        public override void EmpezarSeccion()
+        {
+            EmpezarArmado();
+        }
+
+        //public void SeccionTerminada()
+        //{
+        //    this.GetComponent<ControlSecciones>().SeccionTerminada();
+        //}
     }
 
     [System.Serializable]

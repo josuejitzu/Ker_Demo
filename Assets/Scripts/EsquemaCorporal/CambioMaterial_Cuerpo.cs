@@ -13,14 +13,14 @@ public class CambioMaterial_Cuerpo : MonoBehaviour
     private void OnValidate()
     {
         materialesDeCuerpos.Clear();
-        meshesParteCuerpo = GetComponentsInChildren<MeshRenderer>();
+        //meshesParteCuerpo = GetComponentsInChildren<MeshRenderer>();
 
-        foreach (MeshRenderer mesh in meshesParteCuerpo)
-        {
-            materialesDeCuerpos.Add(mesh.sharedMaterial);
+        //foreach (MeshRenderer mesh in meshesParteCuerpo)
+        //{
+        //    materialesDeCuerpos.Add(mesh.sharedMaterial);
 
            
-        }
+        //}
     }
 
     /// <summary>
@@ -34,15 +34,6 @@ public class CambioMaterial_Cuerpo : MonoBehaviour
 
         if (resaltar)
         {
-            // materialesDeCuerpos.Clear();
-            //guardar los materiales y ponerles el material de resalto;
-            //foreach (MeshRenderer mesh in meshesParteCuerpo)
-            //{
-            //    //materialesDeCuerpos.Add(mesh.material);
-
-            //    mesh.material = materialResaltar;
-
-            //}
             
             for (int i = 0; i < meshesParteCuerpo.Length; i++)
             {
@@ -52,8 +43,8 @@ public class CambioMaterial_Cuerpo : MonoBehaviour
                 
                 
             }
-        }
-        else
+
+        }else
         {
             for (int i = 0; i < meshesParteCuerpo.Length; i++)
             {
