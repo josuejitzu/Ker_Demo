@@ -31,6 +31,7 @@ namespace EsquemaCorporal
         public void ParteSalioDePosicion(ParteCuerpoID parte)
         {
             Debug.Log($"Parte: {parte} salio de posicion, esperando...");
+            Coreografia_Cuerpo.instancia.SetParteCuerpo_Inactiva(parte);
 
         }
     }

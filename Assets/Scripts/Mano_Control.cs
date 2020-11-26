@@ -21,6 +21,21 @@ public class Mano_Control : MonoBehaviour
     Vector3 posFin;
 
     [SerializeField] private Button botonSeleccionado;
+
+    [Space(15)]
+    [Header("Movimiento Joystick")]
+    public OVRInput.Controller control;
+    public OVRInput.Axis2D joystick = OVRInput.Axis2D.PrimaryThumbstick;
+    [Range(0.0f,10.0f)]
+    public float velocidad = 2.0f;
+    public Transform camaraCentro;
+    public Transform camaraEye;
+    [SerializeField] Vector2 joystickMovimiento;
+    [SerializeField] Vector3 posicionJoystick;
+    [SerializeField] Quaternion rotacionEuler;
+    [SerializeField] Vector3 direccionCamara;
+    [SerializeField] Vector3 nuevaPosicion;
+   
     private void OnDrawGizmos()
     {
         //Debug.DrawRay(this.transform.position, Vector3.Normalize((this.transform.forward ) + (this.transform.up )) * distanciaPuntero, Color.red );
@@ -36,9 +51,23 @@ public class Mano_Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        joystickMovimiento = OVRInput.Get(joystick, control);
+        if(joystickMovimiento.magnitude != 0)
+        {
+            posicionJoystick = new  Vector3(joystickMovimiento.x, 0, joystickMovimiento.y);
+            direccionCamara = new Vector3(0, camaraEye.rotation.eulerAngles.y, 0);
+            rotacionEuler = Quaternion.Euler(direccionCamara);
+            nuevaPosicion = rotacionEuler * posicionJoystick;
+            camaraCentro.position += nuevaPosicion *(Time.deltaTime * velocidad);
 
+            //posicionJoystick = 2,0,1
+            //direccionCamara = 0,45,0 en Euler
+            //nuevaPosicion = Euler(direccionCamara) * posicionJoytick;
+            //              = (0,45,0) * (2,0,1)
+            //              = 2,0,1
+        }
  
-          posFin =  this.transform.position  + ( Vector3.Normalize ((this.transform.right * -1) + (this.transform.up * -1)) * distanciaPuntero);
+        posFin =  this.transform.position  + ( Vector3.Normalize ((this.transform.right * -1) + (this.transform.up * -1)) * distanciaPuntero);
         //posFin =   ((this.transform.right * -distanciaPuntero) + (this.transform.up * -distanciaPuntero));
       
         if (debug)

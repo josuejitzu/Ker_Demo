@@ -5,7 +5,7 @@ using TMPro;
 
 namespace EsquemaCorporal
 {
-    
+
     public class Cuerpo_Control : Seccion_EsquemaCorporal
     {
         public static Cuerpo_Control instancia;
@@ -21,7 +21,7 @@ namespace EsquemaCorporal
         [Space(10)]
         public GameObject meshOutlineCuerpo;
         public GameObject parteParaArmar;
-        
+
         [SerializeField] private bool inicioArmado;
         [SerializeField] private bool terminoArmado;
 
@@ -45,17 +45,22 @@ namespace EsquemaCorporal
             panelInstrucciones.SetActive(false);
             parteParaArmar.SetActive(false);
         }
+
         private void Update()
         {
-           
+            if (empezarCronometro)
+            {
+                tiempoCronometro += Time.deltaTime;
+                cronometro_text.text = $" {Mathf.Floor(tiempoCronometro / 60).ToString("00")}:{(tiempoCronometro % 60.0f).ToString("00.0")}";
+            }
         }
 
         public void EmpezarArmado()
         {
             ///mostrar letrero con instrucciones
-           
+
             StartCoroutine(EmpezarArmado_Secuencia());
-            
+
         }
 
         IEnumerator EmpezarArmado_Secuencia()
@@ -86,9 +91,9 @@ namespace EsquemaCorporal
             if (terminoArmado)
                 return;
 
-            foreach(ParteDeCuerpo parteCuerpo in partesDelCuerpo)
+            foreach (ParteDeCuerpo parteCuerpo in partesDelCuerpo)
             {
-                if(parteCuerpo.parteDelCuerpo == parteID  )
+                if (parteCuerpo.parteDelCuerpo == parteID)
                 {
                     parteCuerpo.conPiezaCorrecta = _esCorrecta;
                     parteCuerpo.tiempo = tiempoCronometro;
@@ -107,9 +112,9 @@ namespace EsquemaCorporal
 
             int buenas = 0;
 
-            foreach(ParteDeCuerpo parteCuerpo in partesDelCuerpo)
+            foreach (ParteDeCuerpo parteCuerpo in partesDelCuerpo)
             {
-                if(parteCuerpo.conPiezaCorrecta == PiezaConectadaCorrecta.Correcta)
+                if (parteCuerpo.conPiezaCorrecta == PiezaConectadaCorrecta.Correcta)
                 {
                     buenas++;
                 }
@@ -121,9 +126,11 @@ namespace EsquemaCorporal
 
             }
 
-            if(buenas == partesDelCuerpo.Count)
+            if (buenas >= partesDelCuerpo.Count - 1)
             {
                 terminoArmado = true;
+                panelInstrucciones.gameObject.SetActive(false);
+                meshOutlineCuerpo.SetActive(false);
                 Debug.Log("Todas las partes del cuerpo colocadas correctamentes");
                 SeccionTerminada();
             }
@@ -134,10 +141,10 @@ namespace EsquemaCorporal
             EmpezarArmado();
         }
 
-        //public void SeccionTerminada()
-        //{
-        //    this.GetComponent<ControlSecciones>().SeccionTerminada();
-        //}
+        public override void SeccionTerminada()
+        {
+            this.GetComponent<ControlSecciones>().SeccionTerminada();
+        }
     }
 
     [System.Serializable]
@@ -147,5 +154,22 @@ namespace EsquemaCorporal
         public PiezaConectadaCorrecta conPiezaCorrecta;
         public float tiempo;
 
+    }
+    public void Characteres()
+    {
+        char[] mipalabra = new char[5];
+        int contador = 0;
+
+        char letraEncontrada;
+        bool characterEncontrado;
+        foreach(char c in mipalabra)
+        {
+            if(c==0)
+            {
+                letraEncontrada = c;
+                characterEncontrado = true;
+            }
+            contador++;
+        }
     }
 }

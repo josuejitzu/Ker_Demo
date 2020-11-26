@@ -39,7 +39,7 @@ public class ControlSecciones : MonoBehaviour
     {
         Debug.Log($"Seccion:{secciones[enSeccion]} terminada, siguiente...");
         
-        if(enSeccion < secciones.Count)
+        if(enSeccion < secciones.Count-1)
         {
             enSeccion++;
 

@@ -11,7 +11,7 @@ namespace EsquemaCorporal
         // Start is called before the first frame update
         public GameObject panelPartesCuerpo;
         public TMP_Text nombreParte;
-
+        public GameObject cuerpoPartes;
         [Space(10)]
         public float inicioDeSecuencia = 2.0f;
 
@@ -23,7 +23,7 @@ namespace EsquemaCorporal
         public Apuntar_ParteCuerpo apuntarPartes;
         void Start()
         {
-           
+           // cuerpoPartes.gameObject.SetActive(false);
         }
 
         public void SiguienteParte()
@@ -56,6 +56,8 @@ namespace EsquemaCorporal
         public override void EmpezarSeccion()
         {
             panelPartesCuerpo.SetActive(true);
+            cuerpoPartes.gameObject.SetActive(true);
+
             Invoke("SiguienteParte", inicioDeSecuencia);
         }
 

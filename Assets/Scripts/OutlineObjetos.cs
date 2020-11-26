@@ -10,6 +10,7 @@ public class OutlineObjetos : MonoBehaviour
 
     [SerializeField] private OVRGrabber manoGrabber;
 
+   
     /// <summary>
     /// Activa el Outline por si necesitamos que se ilumine el objeto
     /// </summary>
@@ -27,6 +28,7 @@ public class OutlineObjetos : MonoBehaviour
         if(other.GetComponent<OVRGrabber>())
         {
             ToggleOutline(true);
+            
 
         }
     }

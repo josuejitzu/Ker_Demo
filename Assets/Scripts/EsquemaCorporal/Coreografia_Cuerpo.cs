@@ -109,19 +109,21 @@ namespace EsquemaCorporal
             }
 
             partesDeCuerpo[enParte].zonaTrigger.gameObject.SetActive(false);
+            partesDeCuerpo[enParte].ingresado = true;
+
             empezarCronometro = false;
             partesDeCuerpo[enParte].tiempoCompletacion = tiempoCronometro;
-            partesDeCuerpo[enParte].ingresado = true;
-            parteIdentificada = true;
+            parteIdentificada = true;//para que no pueda triggerearse esto multiple veces antes de cambiar de mano
 
-            enParte = enParte < partesDeCuerpo.Count ? enParte++ : enParte;
-            if(enParte < partesDeCuerpo.Count)
+            //enParte = enParte < partesDeCuerpo.Count ? enParte++ : enParte;
+            if(enParte < partesDeCuerpo.Count-1)
             {
                 enParte++;
+                Debug.Log("Esperar siguiente parte:" + enParte);
             }else
             {
-
-                
+                Debug.Log("Coreografia completada");
+                SeccionTerminada();
             }
            
         }
@@ -133,13 +135,14 @@ namespace EsquemaCorporal
         public void SetParteCuerpo_Activa(ParteCuerpoID _parte)
         {
             //Por el momento esto no es necesario
-            //foreach(ParteCuerpo_DeCoreografia parte in partesDeCuerpo)
-            //{
-            //    if(parte.parteCuerpo == _parte)
-            //    {
-            //        parteCuerpo_Activa = parte.parteCuerpo;
-            //    }
-            //}
+            foreach (ParteCuerpo_DeCoreografia parte in partesDeCuerpo)
+            {
+                if (parte.parteCuerpo == _parte)
+                {
+                    //parteCuerpo_Activa = parte.parteCuerpo;
+                    parte.zonaTrigger.gameObject.SetActive(true);
+                }
+            }
 
             //Se supone que cuando el muñeco llega a la posicion es cuando contamos el tiempo
             //resetear cronometro por si esta ya iniciado
@@ -161,6 +164,9 @@ namespace EsquemaCorporal
             {
                 if(parte.parteCuerpo == _parte)
                 {
+                    if (parte.ingresado)
+                        break;
+
                     empezarCronometro = false;
                     parte.tiempoCompletacion = tiempoCronometro;
                     parte.correcta = false;
@@ -179,6 +185,7 @@ namespace EsquemaCorporal
         public override void SeccionTerminada()
         {
             puppet_Anim.SetBool("secuencia1", false);
+            puppet_Anim.gameObject.SetActive(false);
             base.SeccionTerminada();
 
         }
